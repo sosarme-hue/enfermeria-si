@@ -100,32 +100,68 @@
       re.forEach(function(r){ if(r[0]<pos) return; el.appendChild(document.createTextNode(text.slice(pos,r[0]))); var m=document.createElement('mark'); m.textContent=text.slice(r[0],r[1]); el.appendChild(m); pos=r[1]; });
       el.appendChild(document.createTextNode(text.slice(pos)));
     };
+    // Sinónimos, siglas y nombres comerciales habituales
+    var SYN = {
+      'sintrom':['acenocumarol','anticoagul'], 'acenocumarol':['sintrom'], 'nolotil':['metamizol'], 'ventolin':['salbutamol'],
+      'clexane':['enoxaparina','heparina'], 'enoxaparina':['heparina'], 'epinefrina':['adrenalina'], 'adrenalina':['epinefrina'],
+      'alzheimer':['demencia'], 'itu':['infeccion urinaria','urinari'], 'iam':['infarto'], 'acv':['ictus'], 'avc':['ictus'],
+      'hta':['hipertension'], 'tension':['hipertension','tension arterial'], 'dm':['diabetes'], 'dm2':['diabetes'], 'azucar':['glucemia','diabetes'],
+      'ic':['insuficiencia cardiaca'], 'fa':['fibrilacion auricular'], 'erc':['enfermedad renal'], 'lpp':['lesiones por presion'],
+      'escaras':['lesiones por presion','ulcera'], 'escara':['lesiones por presion'], 'rcp':['soporte vital','reanimacion'], 'pcr':['parada','soporte vital'],
+      'sng':['sondaje nasogastrico'], 'peg':['gastrostomia'], 'picc':['cateter'], 'via':['venosa','cateter'], 'vvp':['via venosa periferica'],
+      'ecg':['electrocardiograma'], 'ta':['tension arterial'], 'sat':['saturacion','oxigeno'], 'o2':['oxigeno'], 'epi':['equipos de proteccion'],
+      'aine':['antiinflamatorio','ibuprofeno'], 'antiinflamatorios':['aine'], 'calmantes':['analgesic'], 'analgesicos':['analgesic'],
+      'antibiotico':['antibiotic'], 'antibioticos':['antibiotic'], 'corticoide':['corticoid'], 'cortisona':['corticoid'], 'inhalador':['inhalador'],
+      'sueros':['fluidoterapia','suero'], 'gota a gota':['goteo'], 'caidas':['caida'], 'presion':['tension','lesiones por presion'],
+      'ahogo':['disnea'], 'falta de aire':['disnea'], 'confusion':['delirium'], 'azucar alta':['hiperglucemia'], 'azucar baja':['hipoglucemia'],
+      'alergia':['anafilaxia','alergi'], 'eir':['eir'], 'embarazada':['embarazo'], 'bebe':['lactante','recien nacido'], 'nino':['infantil','pediatric'], 'ninos':['infantil','pediatric'], 'cancer':['oncolog','paliativ'], 'tumor':['oncolog','paliativ']
+    };
+    var clean = function(s){ return ' ' + norm(s||'').replace(/[^a-z0-9ñ]+/g,' ') + ' '; };
+    var prep = function(){ I.forEach(function(p){ p.T = clean(p[0]); p.S = clean(p[2]); p.X = clean(p[4]); p.sec = (p[1].split('/').filter(Boolean).length <= 1); }); };
+    var count = function(h, q, cap){ var n=0, k=h.indexOf(q); while(k>=0 && n<cap){ n++; k=h.indexOf(q,k+q.length); } return n; };
+    // Puntúa un término (o sus alternativas) en una página. Coincidencia a principio de palabra; subcadena solo si el término es largo.
+    var score1 = function(p, alts){
+      var best = 0;
+      alts.forEach(function(q){
+        var w = ' ' + q, s = 0;
+        if (p.T.indexOf(w)>=0) s = 12; else if (p.S.indexOf(w)>=0) s = 5;
+        var c = count(p.X, w, 6); if (c) s += Math.max(1, c);
+        if (!s && q.length >= 5 && (p.T+p.S+p.X).indexOf(q)>=0) s = 1;
+        if (s > best) best = s;
+      });
+      return best;
+    };
     var run = function(){
       if (!I) return;
-      var raw = inp.value.trim(), terms = norm(raw).split(/\s+/).filter(function(w){return w.length>1;});
+      var raw = inp.value.trim(), all = norm(raw).replace(/[^a-z0-9ñ ]+/g,' ').trim();
+      var terms = all.split(/\s+/).filter(function(w){return w.length>1;});
       var aud = (form.querySelector('input[name=a]:checked')||{}).value||'';
       box.innerHTML='';
       if (!terms.length) return;
+      var groups = SYN[all] ? [[all].concat(SYN[all])] : terms.map(function(q){ return [q].concat(SYN[q]||[]); });
       var hits = [];
       I.forEach(function(p){
         if (aud && p[3].indexOf(aud)<0) return;
-        var T = norm(p[0]), S = norm(p[2]), X = norm(p[4]||''), score = 0;
-        for (var i=0;i<terms.length;i++){ var q=terms[i];
-          if (T.indexOf(q)>=0) score += 10; else if (S.indexOf(q)>=0) score += 4; else if (X.indexOf(q)>=0) score += 1; else return; }
-        if (T.indexOf(terms.join(' '))===0) score += 5;
+        var score = 0;
+        for (var i=0;i<groups.length;i++){ var s = score1(p, groups[i]); if (!s) return; score += s; }
+        if (p.T.indexOf(' ' + all)===0) score += 6;
+        if (p.sec) score -= 4;
         hits.push([score,p]);
       });
       hits.sort(function(a,b){ return b[0]-a[0]; });
-      var max = full ? 40 : 8;
+      var mterms = []; groups.forEach(function(g){ g.forEach(function(q){ mterms.push(q); }); });
+      var max = full ? 50 : 8;
       var n = document.createElement('p'); n.className='n';
       n.textContent = hits.length ? (hits.length===1 ? '1 página encontrada' : hits.length+' páginas encontradas') : 'No hay resultados. Prueba con otra palabra, por ejemplo «heparina», «Glasgow» o «fiebre».';
       box.appendChild(n);
       hits.slice(0,max).forEach(function(h){ var p=h[1], a=document.createElement('a'); a.href=href(p[1]);
-        var b=document.createElement('b'); mark(b,p[0],terms); a.appendChild(b);
-        var s=document.createElement('span'); var sn = (norm(p[0]+' '+p[2]).indexOf(terms[0])<0 && p[4]) ? snip(p[4],terms) : null; mark(s, sn||p[2], terms); a.appendChild(s); box.appendChild(a); });
-      if (!full && hits.length>max){ var m=document.createElement('a'); m.href=href('buscar/')+'?q='+encodeURIComponent(raw); m.textContent='Ver los '+hits.length+' resultados'; box.appendChild(m); }
+        var b=document.createElement('b'); mark(b,p[0],mterms); a.appendChild(b);
+        var s=document.createElement('span'), sn=null;
+        if (norm(p[0]+' '+p[2]).indexOf(mterms[0])<0 && p[4]) { for (var j=0;j<mterms.length && !sn;j++) sn = snip(p[4],[mterms[j]]); }
+        mark(s, sn||p[2], mterms); a.appendChild(s); box.appendChild(a); });
+      if (!full && hits.length>max){ var m=document.createElement('a'); m.className='more'; m.href=href('buscar/')+'?q='+encodeURIComponent(raw); m.textContent='Ver los '+hits.length+' resultados'; box.appendChild(m); }
     };
-    var load = function(){ if (I) return run(); fetch(form.dataset.src).then(function(r){return r.json();}).then(function(d){ I=d; run(); }).catch(function(){ box.textContent='No se ha podido cargar el buscador.'; }); };
+    var load = function(){ if (I) return run(); fetch(form.dataset.src).then(function(r){return r.json();}).then(function(d){ I=d; prep(); run(); }).catch(function(){ box.textContent='No se ha podido cargar el buscador.'; }); };
     form.addEventListener('submit',function(e){ e.preventDefault(); load(); });
     inp.addEventListener('input',load); inp.addEventListener('focus',load,{once:true});
     form.querySelectorAll('input[name=a]').forEach(function(r){ r.addEventListener('change',load); });
