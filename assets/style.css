@@ -324,3 +324,12 @@ form.search.page{max-width:760px;margin:18px 0 48px}
   nav.main a{padding:5px 10px;border:1px solid var(--line);border-radius:6px;background:var(--paper);font-weight:700;font-size:.88rem;line-height:1.2}
   nav.main a[aria-current="page"],nav.main a:hover{background:var(--scrub);border-color:var(--scrub);color:var(--paper);text-decoration:none}
 }
+
+/* buscador arriba en portada */
+form.search.top .sbar{margin-top:0;margin-bottom:22px;align-items:center}
+.sbar .lupa{flex:none;margin-left:14px;color:var(--ink);opacity:.75}
+.sbar .lupa+input{padding-left:10px}
+form.search.top #resultados:not(:empty){margin-bottom:22px}
+form.search.top .chips{margin:-10px 0 22px}
+@media(max-width:720px){form.search.top .sbar{margin-bottom:14px}form.search.top .chips{margin:-4px 0 14px}}
+form.search.top .sbar button{align-self:stretch}
