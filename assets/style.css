@@ -38,6 +38,7 @@ header.top .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding
 nav.main{display:flex;gap:16px;flex-wrap:wrap;flex:1}
 nav.main a{color:var(--ink);text-decoration:none;font-size:.95rem}
 nav.main a:hover,nav.main a[aria-current="page"]{color:var(--scrub);text-decoration:underline;text-underline-offset:4px}
+@media (min-width:961px){nav.main{gap:12px}nav.main a{font-size:.9rem}}
 .langlink{font-size:.9rem}
 
 /* Portada */

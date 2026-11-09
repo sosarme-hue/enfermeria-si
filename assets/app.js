@@ -104,7 +104,7 @@
     var SYN = {
       'sintrom':['acenocumarol','anticoagul'], 'acenocumarol':['sintrom'], 'nolotil':['metamizol'], 'ventolin':['salbutamol'],
       'clexane':['enoxaparina','heparina'], 'enoxaparina':['heparina'], 'epinefrina':['adrenalina'], 'adrenalina':['epinefrina'],
-      'alzheimer':['demencia'], 'itu':['infeccion urinaria','urinari'], 'iam':['infarto'], 'acv':['ictus'], 'avc':['ictus'],
+      'alzheimer':['demencia'], 'atdom':['domiciliaria'], 'domicilio':['domiciliaria'], 'pcc':['cronico complejo'], 'maca':['cronica avanzada'], 'efyc':['familiar y comunitaria'], 'gestora':['gestion de casos'], 'itu':['infeccion urinaria','urinari'], 'iam':['infarto'], 'acv':['ictus'], 'avc':['ictus'],
       'hta':['hipertension'], 'tension':['hipertension','tension arterial'], 'dm':['diabetes'], 'dm2':['diabetes'], 'azucar':['glucemia','diabetes'],
       'ic':['insuficiencia cardiaca'], 'fa':['fibrilacion auricular'], 'erc':['enfermedad renal'], 'lpp':['lesiones por presion'],
       'escaras':['lesiones por presion','ulcera'], 'escara':['lesiones por presion'], 'rcp':['soporte vital','reanimacion'], 'pcr':['parada','soporte vital'],
