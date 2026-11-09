@@ -14,8 +14,15 @@
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bitter:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="../assets/style.css?v=1794254949">
-<script src="../assets/app.js?v=1794254949" defer></script>
+<link rel="stylesheet" href="../assets/style.css?v=1794257431">
+<script src="../assets/app.js?v=1794257431" defer></script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
+window.GA_ID='G-EYMYBSC1PG';
+window.loadGA=function(){if(!window.GA_ID||window._gaOn)return;window._gaOn=1;gtag('consent','update',{analytics_storage:'granted'});var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id='+window.GA_ID;document.head.appendChild(s);gtag('js',new Date());gtag('config',window.GA_ID);};
+try{if(localStorage.getItem('cookies')==='si')loadGA();}catch(e){}
+</script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -27,16 +34,38 @@
 <main id="contenido">
 <div class="wrap"><nav class="crumbs"><a href="../">Inicio</a> / Privacidad y cookies</nav>
 <div class="head" style="margin-top:18px"><div><span class="label">enfermeria.si</span><h1 style="margin-top:8px">Privacidad y cookies</h1><p></p></div></div><div class="doc" style="padding-bottom:60px">
-<p>Esta web no usa cookies de seguimiento ni de publicidad. Las calculadoras y escalas funcionan en tu navegador: lo que introduces no se envía ni se guarda en ningún servidor.</p>
-<p>Las tipografías se cargan desde Google Fonts. Si en el futuro se añade analítica o un formulario de contacto, esta página se actualizará y se pedirá tu consentimiento cuando sea necesario.</p></div></div>
+<p>Las calculadoras y escalas funcionan en tu navegador: lo que introduces no se envía ni se guarda en ningún servidor.</p>
+<h2>Cookies de analítica</h2>
+<p>Si das tu consentimiento, usamos <b>Google Analytics</b> (Google Ireland Limited) para contar las visitas y saber qué páginas se consultan, de forma agregada. Esto nos ayuda a decidir qué contenidos mejorar. Sin tu consentimiento no se carga Google Analytics ni se instala ninguna de sus cookies.</p>
+<div class="tscroll"><table class="t"><thead><tr><th>Cookie</th><th>Para qué sirve</th><th>Duración</th></tr></thead><tbody>
+<tr><td>_ga</td><td>Distinguir visitantes de forma anónima</td><td>2 años</td></tr>
+<tr><td>_ga_EYMYBSC1PG</td><td>Mantener el estado de la sesión</td><td>2 años</td></tr></tbody></table></div>
+<p>Google puede tratar estos datos fuera del Espacio Económico Europeo con las garantías previstas en el Reglamento General de Protección de Datos. Más información en la <a href="https://policies.google.com/privacy?hl=es" rel="noopener">política de privacidad de Google</a>.</p>
+<p>Tu elección se guarda en tu navegador. Puedes cambiarla cuando quieras desde el enlace <a href="#" data-cookies>Cookies</a> del pie de página, o borrando los datos del sitio en tu navegador.</p>
+<h2>Otros servicios</h2>
+<p>Las tipografías se cargan desde Google Fonts.</p>
+<h2>Tus derechos</h2>
+<p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a la dirección de contacto del <a href="../aviso-legal/">aviso legal</a>, y reclamar ante la Agencia Española de Protección de Datos (aepd.es).</p></div></div>
 </main>
 <footer><div class="wrap">
 <div>
 <p class="alert"><b>Ante una urgencia, llama al 112.</b> enfermeria.si ofrece información sanitaria general y no sustituye la valoración de un profesional. Para un caso concreto, consulta con tu enfermera o tu médico, y sigue siempre los protocolos de tu centro.</p>
 <p>Cada página indica sus fuentes y la fecha de la última revisión. Las fuentes son guías de práctica clínica, normativa publicada en el BOE y documentos de organismos oficiales como el Ministerio de Sanidad, el INE y la OMS. <a href="../fuentes-y-metodologia/">Cómo elaboramos el contenido</a>.</p>
 </div>
-<div><p><a href="../aviso-legal/">Aviso legal</a> · <a href="../privacidad/">Privacidad</a> · <a href="../fuentes-y-metodologia/">Fuentes</a> · <a href="../novedades/">Novedades</a> · <a href="../glosario/">Glosario</a> · <a href="../historia/">Historia</a> · <a href="../en-el-mundo/">En el mundo</a></p><p>© 2026 enfermeria.si</p></div>
+<div><p><a href="../aviso-legal/">Aviso legal</a> · <a href="../privacidad/">Privacidad</a> · <a href="../fuentes-y-metodologia/">Fuentes</a> · <a href="../novedades/">Novedades</a> · <a href="../glosario/">Glosario</a> · <a href="../historia/">Historia</a> · <a href="../en-el-mundo/">En el mundo</a> · <a href="#" data-cookies>Cookies</a></p><p>© 2026 enfermeria.si</p></div>
 </div></footer>
 
+<div class="cookies" id="cookies" role="dialog" aria-label="Aviso de cookies" hidden>
+<p>Usamos cookies de analítica (Google Analytics) para saber qué páginas se consultan y mejorar la web. Solo se activan si las aceptas. <a href="../privacidad/">Más información</a></p>
+<div class="cb"><button type="button" data-c="no">Rechazar</button><button type="button" data-c="si">Aceptar</button></div>
+</div>
+<script>
+(function(){var b=document.getElementById('cookies'),v=null;try{v=localStorage.getItem('cookies');}catch(e){}
+if(!v)b.hidden=false;
+b.addEventListener('click',function(e){var c=e.target.getAttribute('data-c');if(!c)return;try{localStorage.setItem('cookies',c);}catch(x){}
+if(c==='si')loadGA();else{gtag('consent','update',{analytics_storage:'denied'});document.cookie.split(';').forEach(function(k){k=k.split('=')[0].trim();if(k.indexOf('_ga')===0){document.cookie=k+'=;max-age=0;path=/;domain=.'+location.hostname.replace(/^www\./,'');document.cookie=k+'=;max-age=0;path=/';}});}
+b.hidden=true;});
+document.querySelectorAll('[data-cookies]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();b.hidden=false;});});})();
+</script>
 </body>
 </html>

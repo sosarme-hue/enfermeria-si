@@ -114,7 +114,7 @@
       'antibiotico':['antibiotic'], 'antibioticos':['antibiotic'], 'corticoide':['corticoid'], 'cortisona':['corticoid'], 'inhalador':['inhalador'],
       'sueros':['fluidoterapia','suero'], 'gota a gota':['goteo'], 'caidas':['caida'], 'presion':['tension','lesiones por presion'],
       'ahogo':['disnea'], 'falta de aire':['disnea'], 'confusion':['delirium'], 'azucar alta':['hiperglucemia'], 'azucar baja':['hipoglucemia'],
-      'alergia':['anafilaxia','alergi'], 'eir':['eir'], 'embarazada':['embarazo'], 'bebe':['lactante','recien nacido'], 'nino':['infantil','pediatric'], 'ninos':['infantil','pediatric'], 'cancer':['oncolog','paliativ'], 'tumor':['oncolog','paliativ']
+      'alergia':['anafilaxia','alergi'], 'eir':['eir'], 'embarazada':['embarazo'], 'bebe':['lactante','recien nacido'], 'nino':['infantil','pediatric'], 'ninos':['infantil','pediatric'], 'cancer':['oncolog','paliativ'], 'tumor':['oncolog','paliativ'], 'tiroides':['hipotiroidismo','tiroid'], 'eutirox':['levotiroxina'], 'colesterol':['colesterol','dislipemia'], 'adiro':['acido acetilsalicilico','antiagreg'], 'aspirina':['acido acetilsalicilico'], 'seguril':['furosemida'], 'protector':['protectores gastricos','omeprazol'], 'huesos':['osteoporosis'], 'orina':['urinari','orina'], 'pulmonia':['neumonia'], 'cistitis':['cistitis','infeccion urinaria']
     };
     var clean = function(s){ return ' ' + norm(s||'').replace(/[^a-z0-9ñ]+/g,' ') + ' '; };
     var prep = function(){ I.forEach(function(p){ p.T = clean(p[0]); p.S = clean(p[2]); p.X = clean(p[4]); p.sec = (p[1].split('/').filter(Boolean).length <= 1); }); };
