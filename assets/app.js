@@ -82,23 +82,54 @@
     });
   }
 
-  // Buscador sencillo sobre el índice de la web
-  var idx = $('search-index');
+  // Buscador: índice en assets/buscar.json [título, ruta, resumen, públicos, texto]
   var form = document.querySelector('form.search');
-  if (idx && form) {
-    var I = JSON.parse(idx.textContent), box = $('resultados');
+  if (form && form.dataset.src) {
+    var box = $('resultados'), inp = form.querySelector('input[type=search]'), I = null, full = form.classList.contains('page');
     var norm = function(s){ return s.toLocaleLowerCase('es').normalize('NFD').replace(/[̀-ͯ]/g,''); };
+    var href = function(p){ var h = form.dataset.root + p; if (form.dataset.ix && (h==='' || h.slice(-1)==='/')) h += 'index.html'; return h; };
+    var snip = function(t, terms){
+      var n = norm(t), k = n.indexOf(terms[0]); if (k < 0) return null;
+      var a = Math.max(0, k-70), b = Math.min(t.length, k+150), s = (a?'… ':'') + t.slice(a,b) + (b<t.length?' …':'');
+      return s;
+    };
+    var mark = function(el, text, terms){
+      var n = norm(text), pos = 0, re = [];
+      terms.forEach(function(q){ var k = n.indexOf(q); while(k>=0){ re.push([k,k+q.length]); k = n.indexOf(q,k+q.length); } });
+      re.sort(function(x,y){return x[0]-y[0];});
+      re.forEach(function(r){ if(r[0]<pos) return; el.appendChild(document.createTextNode(text.slice(pos,r[0]))); var m=document.createElement('mark'); m.textContent=text.slice(r[0],r[1]); el.appendChild(m); pos=r[1]; });
+      el.appendChild(document.createTextNode(text.slice(pos)));
+    };
     var run = function(){
-      var q = norm(form.querySelector('input[type=search]').value.trim());
+      if (!I) return;
+      var raw = inp.value.trim(), terms = norm(raw).split(/\s+/).filter(function(w){return w.length>1;});
       var aud = (form.querySelector('input[name=a]:checked')||{}).value||'';
       box.innerHTML='';
-      if(q.length<2) return;
-      var hits = I.filter(function(p){ return (!aud || p[3].indexOf(aud)>=0) && norm(p[0]+' '+p[2]).indexOf(q)>=0; }).slice(0,8);
-      if(!hits.length){ box.textContent='No hay resultados. Prueba con «sonda», «Glasgow», «EIR» o «Nightingale».'; return; }
-      hits.forEach(function(p){ var a=document.createElement('a'); a.href=p[1]; a.textContent=p[0]; var s=document.createElement('span'); s.textContent=p[2]; a.appendChild(s); box.appendChild(a); });
+      if (!terms.length) return;
+      var hits = [];
+      I.forEach(function(p){
+        if (aud && p[3].indexOf(aud)<0) return;
+        var T = norm(p[0]), S = norm(p[2]), X = norm(p[4]||''), score = 0;
+        for (var i=0;i<terms.length;i++){ var q=terms[i];
+          if (T.indexOf(q)>=0) score += 10; else if (S.indexOf(q)>=0) score += 4; else if (X.indexOf(q)>=0) score += 1; else return; }
+        if (T.indexOf(terms.join(' '))===0) score += 5;
+        hits.push([score,p]);
+      });
+      hits.sort(function(a,b){ return b[0]-a[0]; });
+      var max = full ? 40 : 8;
+      var n = document.createElement('p'); n.className='n';
+      n.textContent = hits.length ? (hits.length===1 ? '1 página encontrada' : hits.length+' páginas encontradas') : 'No hay resultados. Prueba con otra palabra, por ejemplo «heparina», «Glasgow» o «fiebre».';
+      box.appendChild(n);
+      hits.slice(0,max).forEach(function(h){ var p=h[1], a=document.createElement('a'); a.href=href(p[1]);
+        var b=document.createElement('b'); mark(b,p[0],terms); a.appendChild(b);
+        var s=document.createElement('span'); var sn = (norm(p[0]+' '+p[2]).indexOf(terms[0])<0 && p[4]) ? snip(p[4],terms) : null; mark(s, sn||p[2], terms); a.appendChild(s); box.appendChild(a); });
+      if (!full && hits.length>max){ var m=document.createElement('a'); m.href=href('buscar/')+'?q='+encodeURIComponent(raw); m.textContent='Ver los '+hits.length+' resultados'; box.appendChild(m); }
     };
-    form.addEventListener('submit',function(e){ e.preventDefault(); run(); });
-    form.querySelector('input[type=search]').addEventListener('input',run);
-    form.querySelectorAll('input[name=a]').forEach(function(r){ r.addEventListener('change',run); });
+    var load = function(){ if (I) return run(); fetch(form.dataset.src).then(function(r){return r.json();}).then(function(d){ I=d; run(); }).catch(function(){ box.textContent='No se ha podido cargar el buscador.'; }); };
+    form.addEventListener('submit',function(e){ e.preventDefault(); load(); });
+    inp.addEventListener('input',load); inp.addEventListener('focus',load,{once:true});
+    form.querySelectorAll('input[name=a]').forEach(function(r){ r.addEventListener('change',load); });
+    var qs = (location.search.match(/[?&]q=([^&]*)/)||[])[1];
+    if (qs) { inp.value = decodeURIComponent(qs.replace(/\+/g,' ')); load(); }
   }
 })();
