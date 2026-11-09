@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>enfermeria.si · Cálculo de dosis y diluciones</title>
+<meta name="description" content="Tres cálculos que se hacen cada día en planta: cuántos mililitros hay que administrar, qué concentración tiene una dilución y qué dosis corresponde por peso. Úsalos para comprobar tu cálculo, nunca en lugar de pensarlo.">
+<link rel="canonical" href="https://enfermeria.si/escalas/calculo-de-dosis/">
+<link rel="alternate" hreflang="es-ES" href="https://enfermeria.si/escalas/calculo-de-dosis/">
+<link rel="alternate" hreflang="x-default" href="https://enfermeria.si/escalas/calculo-de-dosis/">
+<meta property="og:title" content="Cálculo de dosis y diluciones">
+<meta property="og:description" content="Tres cálculos que se hacen cada día en planta: cuántos mililitros hay que administrar, qué concentración tiene una dilución y qué dosis corresponde por peso. Úsalos para comprobar tu cálculo, nunca en lugar de pensarlo.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bitter:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../"><svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="6" fill="var(--rose)"/><path d="M24 44C13 36.5 6 30 6 21c0-5.5 4-9 9-9 4 0 7 2.5 9 6.5" fill="none" stroke="var(--scrub)" stroke-width="5" stroke-linecap="round"/><path d="M24 44c11-7.5 18-14 18-23 0-5.5-4-9-9-9-4 0-7 2.5-9 6.5" fill="none" stroke="var(--scrub)" stroke-width="5" stroke-linecap="round" opacity=".55"/></svg><span class="bt">enfermería<span>.si</span></span></a>
+<nav class="main" aria-label="Secciones"><a href="../../tecnicas/">Técnicas</a><a href="../../escalas/" aria-current="page">Escalas</a><a href="../../vacunas/">Vacunas</a><a href="../../etapas-de-la-vida/">Etapas de la vida</a><a href="../../proceso-enfermero/">Proceso enfermero</a><a href="../../eir/">EIR</a><a href="../../cuidados-en-casa/">Cuidados en casa</a><a href="../../historia/">Historia</a><a href="../../en-el-mundo/">Mundo</a><a href="../../formacion/">Formación</a></nav>
+</div></header>
+<main id="contenido">
+<div class="wrap"><nav class="crumbs" aria-label="Estás en"><a href="../../">Inicio</a> / <a href="../../escalas/">Escalas y calculadoras</a></nav>
+<div class="art"><article class="art-main">
+<header><span class="label">Calculadora</span><h1 style="margin-top:8px">Cálculo de dosis y diluciones</h1><p class="lead">Tres cálculos que se hacen cada día en planta: cuántos mililitros hay que administrar, qué concentración tiene una dilución y qué dosis corresponde por peso. Úsalos para comprobar tu cálculo, nunca en lugar de pensarlo.</p>
+<p class="revised">Revisado en noviembre de 2026 · Fuentes al final de la página</p></header>
+<div class="doc"><h2>¿Cuántos mililitros administro?</h2><div class="tool calc" style="margin-block:18px 24px"><div class="fields"><label>Dosis prescrita (mg)<input type="number" inputmode="decimal" min="0" step="any" value="500" data-v="d" ></label><label>Cantidad en el envase (mg)<input type="number" inputmode="decimal" min="0" step="any" value="1000" data-v="m" ></label><label>Volumen del envase (ml)<input type="number" inputmode="decimal" min="0" step="any" value="10" data-v="v" ></label></div><div class="result" aria-live="polite"><div><b data-f="d*v/m" data-d="2">—</b><small>ml a administrar</small></div></div><p class="formula">ml = dosis prescrita × volumen ÷ cantidad de fármaco</p><p class="formula">Herramienta orientativa. Comprueba siempre el resultado y la prescripción.</p></div><h2>¿Qué concentración tiene la dilución?</h2><div class="tool calc" style="margin-block:18px 24px"><div class="fields"><label>Fármaco añadido (mg)<input type="number" inputmode="decimal" min="0" step="any" value="250" data-v="m" ></label><label>Volumen final (ml)<input type="number" inputmode="decimal" min="0" step="any" value="50" data-v="v" ></label></div><div class="result" aria-live="polite"><div><b data-f="m/v" data-d="2">—</b><small>mg por ml</small></div><div><b data-f="m*1000/v" data-d="0">—</b><small>µg por ml</small></div></div><p class="formula">concentración = cantidad de fármaco ÷ volumen final</p><p class="formula">Herramienta orientativa. Comprueba siempre el resultado y la prescripción.</p></div><h2>Dosis según el peso</h2><div class="tool calc" style="margin-block:18px 24px"><div class="fields"><label>Dosis (mg/kg y toma)<input type="number" inputmode="decimal" min="0" step="any" value="15" data-v="k" ></label><label>Peso (kg)<input type="number" inputmode="decimal" min="0" step="any" value="20" data-v="p" ></label><label>Dosis máxima por toma (mg)<input type="number" inputmode="decimal" min="0" step="any" value="1000" data-v="x" ></label></div><div class="result" aria-live="polite"><div><b data-f="Math.min(k*p,x)" data-d="1">—</b><small>mg por toma</small></div></div><p class="formula">dosis = mg/kg × peso, sin superar la dosis máxima. Ejemplo: paracetamol en un niño de 20 kg.</p><p class="formula">Herramienta orientativa. Comprueba siempre el resultado y la prescripción.</p></div>
+<h2>Reglas de seguridad</h2>
+<ul><li>Escribe y comprueba siempre las unidades: mg, µg (microgramos), g, unidades internacionales. El error de un factor 1.000 entre mg y µg es de los más graves.</li>
+<li>Usa la presentación que exige menos cálculos y, si existe, la ya diluida por farmacia.</li>
+<li>Pide un doble chequeo independiente en pediatría y con medicamentos de alto riesgo (insulina, heparina, opioides, potasio, quimioterapia).</li>
+<li>Desconfía de un resultado que obliga a administrar muchas ampollas o una cantidad muy pequeña: suele ser un error de unidades.</li></ul>
+<p>Consulta la dosis, la dilución y la velocidad en la ficha técnica del medicamento (CIMA, de la Agencia Española de Medicamentos) o en la guía de administración de tu hospital.</p>
+
+<section class="sources" id="fuentes"><h2>Fuentes</h2><ol><li>Instituto para el Uso Seguro de los Medicamentos (ISMP-España). Lista de medicamentos de alto riesgo y recomendaciones para prevenir errores de medicación. <a href="https://www.ismp-espana.org/" rel="noopener">www.ismp-espana.org</a></li><li>Agencia Española de Medicamentos y Productos Sanitarios. Centro de Información online de Medicamentos (CIMA): fichas técnicas. <a href="https://cima.aemps.es/" rel="noopener">cima.aemps.es</a></li><li>Organización Mundial de la Salud. <i>Medication Without Harm: WHO Global Patient Safety Challenge</i>. Ginebra: OMS; 2017. <a href="https://www.who.int/initiatives/medication-without-harm" rel="noopener">www.who.int</a></li></ol></section>
+</div></article>
+<aside class="side"><div class="box"><h3>Otras escalas</h3><ul><li><a href="../../escalas/ritmo-de-goteo/">Ritmo de goteo y velocidad de perfusión</a></li><li><a href="../../escalas/glasgow/">Escala de coma de Glasgow</a></li><li><a href="../../escalas/braden/">Escala de Braden</a></li><li><a href="../../escalas/norton/">Escala de Norton modificada</a></li><li><a href="../../escalas/barthel/">Índice de Barthel</a></li><li><a href="../../escalas/dolor/">Escalas de dolor</a></li><li><a href="../../escalas/news2/">Escala NEWS2</a></li><li><a href="../../escalas/downton/">Escala de Downton</a></li><li><a href="../../escalas/perfusiones/">Perfusiones continuas</a></li><li><a href="../../escalas/medidas-corporales-y-balance/">IMC, superficie corporal y balance hídrico</a></li><li><a href="../../escalas/morse/">Escala de Morse</a></li><li><a href="../../escalas/mna-sf/">MNA-SF</a></li><li><a href="../../escalas/pfeiffer/">Cuestionario de Pfeiffer</a></li><li><a href="../../escalas/zarit/">Escala de Zarit</a></li><li><a href="../../escalas/apgar/">Test de Apgar</a></li><li><a href="../../escalas/lawton-brody/">Escala de Lawton y Brody</a></li><li><a href="../../escalas/tinetti/">Escala de Tinetti</a></li><li><a href="../../escalas/ictus-cincinnati-y-race/">Ictus: escalas de Cincinnati y RACE</a></li></ul></div><div class="box"><h3>Importante</h3><p class="muted" style="font-size:.9rem">Esta ficha resume la evidencia y las guías vigentes. En tu centro manda el protocolo aprobado, que puede tener matices.</p></div></aside>
+</div></div>
+</main>
+<footer><div class="wrap">
+<div>
+<p class="alert"><b>Ante una urgencia, llama al 112.</b> enfermeria.si ofrece información sanitaria general y no sustituye la valoración de un profesional. Para un caso concreto, consulta con tu enfermera o tu médico, y sigue siempre los protocolos de tu centro.</p>
+<p>Cada página indica sus fuentes y la fecha de la última revisión. Las fuentes son guías de práctica clínica, normativa publicada en el BOE y documentos de organismos oficiales como el Ministerio de Sanidad, el INE y la OMS. <a href="../../fuentes-y-metodologia/">Cómo elaboramos el contenido</a>.</p>
+</div>
+<div><p><a href="../../aviso-legal/">Aviso legal</a> · <a href="../../privacidad/">Privacidad</a> · <a href="../../fuentes-y-metodologia/">Fuentes</a> · <a href="../../novedades/">Novedades</a> · <a href="../../glosario/">Glosario</a></p><p>© 2026 enfermeria.si</p></div>
+</div></footer>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>enfermeria.si · Perfusiones continuas</title>
+<meta name="description" content="Muchos fármacos en perfusión continua (noradrenalina, dopamina, dobutamina, nitroglicerina) se pautan en microgramos por kilo y minuto, pero la bomba se programa en mililitros por hora. Esta calculadora hace la conversión en los dos sentidos.">
+<link rel="canonical" href="https://enfermeria.si/escalas/perfusiones/">
+<link rel="alternate" hreflang="es-ES" href="https://enfermeria.si/escalas/perfusiones/">
+<link rel="alternate" hreflang="x-default" href="https://enfermeria.si/escalas/perfusiones/">
+<meta property="og:title" content="Perfusiones continuas">
+<meta property="og:description" content="Muchos fármacos en perfusión continua (noradrenalina, dopamina, dobutamina, nitroglicerina) se pautan en microgramos por kilo y minuto, pero la bomba se programa en mililitros por hora. Esta calculadora hace la conversión en los dos sentidos.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bitter:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../"><svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="6" fill="var(--rose)"/><path d="M24 44C13 36.5 6 30 6 21c0-5.5 4-9 9-9 4 0 7 2.5 9 6.5" fill="none" stroke="var(--scrub)" stroke-width="5" stroke-linecap="round"/><path d="M24 44c11-7.5 18-14 18-23 0-5.5-4-9-9-9-4 0-7 2.5-9 6.5" fill="none" stroke="var(--scrub)" stroke-width="5" stroke-linecap="round" opacity=".55"/></svg><span class="bt">enfermería<span>.si</span></span></a>
+<nav class="main" aria-label="Secciones"><a href="../../tecnicas/">Técnicas</a><a href="../../escalas/" aria-current="page">Escalas</a><a href="../../vacunas/">Vacunas</a><a href="../../etapas-de-la-vida/">Etapas de la vida</a><a href="../../proceso-enfermero/">Proceso enfermero</a><a href="../../eir/">EIR</a><a href="../../cuidados-en-casa/">Cuidados en casa</a><a href="../../historia/">Historia</a><a href="../../en-el-mundo/">Mundo</a><a href="../../formacion/">Formación</a></nav>
+</div></header>
+<main id="contenido">
+<div class="wrap"><nav class="crumbs" aria-label="Estás en"><a href="../../">Inicio</a> / <a href="../../escalas/">Escalas y calculadoras</a></nav>
+<div class="art"><article class="art-main">
+<header><span class="label">Calculadora</span><h1 style="margin-top:8px">Perfusiones continuas</h1><p class="lead">Muchos fármacos en perfusión continua (noradrenalina, dopamina, dobutamina, nitroglicerina) se pautan en microgramos por kilo y minuto, pero la bomba se programa en mililitros por hora. Esta calculadora hace la conversión en los dos sentidos.</p>
+<p class="revised">Revisado en noviembre de 2026 · Fuentes al final de la página</p></header>
+<div class="doc"><h2>De µg/kg/min a ml/h</h2><div class="tool calc" style="margin-block:18px 24px"><div class="fields"><label>Dosis (µg/kg/min)<input type="number" inputmode="decimal" min="0" step="any" value="0.1" data-v="dose" ></label><label>Peso (kg)<input type="number" inputmode="decimal" min="0" step="any" value="70" data-v="p" ></label><label>Fármaco en la mezcla (mg)<input type="number" inputmode="decimal" min="0" step="any" value="8" data-v="m" ></label><label>Volumen de la mezcla (ml)<input type="number" inputmode="decimal" min="0" step="any" value="100" data-v="v" ></label></div><div class="result" aria-live="polite"><div><b data-f="dose*p*60/(m*1000/v)" data-d="1">—</b><small>ml/h</small></div><div><b data-f="m*1000/v" data-d="0">—</b><small>µg/ml en la mezcla</small></div></div><p class="formula">ml/h = dosis (µg/kg/min) × peso × 60 ÷ concentración (µg/ml)</p><p class="formula">Herramienta orientativa. Comprueba siempre el resultado y la prescripción.</p></div><h2>De ml/h a µg/kg/min</h2><div class="tool calc" style="margin-block:18px 24px"><div class="fields"><label>Velocidad de la bomba (ml/h)<input type="number" inputmode="decimal" min="0" step="any" value="5" data-v="r" ></label><label>Peso (kg)<input type="number" inputmode="decimal" min="0" step="any" value="70" data-v="p" ></label><label>Fármaco en la mezcla (mg)<input type="number" inputmode="decimal" min="0" step="any" value="8" data-v="m" ></label><label>Volumen de la mezcla (ml)<input type="number" inputmode="decimal" min="0" step="any" value="100" data-v="v" ></label></div><div class="result" aria-live="polite"><div><b data-f="r*(m*1000/v)/(p*60)" data-d="3">—</b><small>µg/kg/min</small></div></div><p class="formula">µg/kg/min = ml/h × concentración (µg/ml) ÷ (peso × 60)</p><p class="formula">Herramienta orientativa. Comprueba siempre el resultado y la prescripción.</p></div><h2>Dosis fija por hora</h2><div class="tool calc" style="margin-block:18px 24px"><div class="fields"><label>Dosis (mg/h)<input type="number" inputmode="decimal" min="0" step="any" value="2" data-v="dh" ></label><label>Fármaco en la mezcla (mg)<input type="number" inputmode="decimal" min="0" step="any" value="50" data-v="m" ></label><label>Volumen de la mezcla (ml)<input type="number" inputmode="decimal" min="0" step="any" value="50" data-v="v" ></label></div><div class="result" aria-live="polite"><div><b data-f="dh*v/m" data-d="1">—</b><small>ml/h</small></div></div><p class="formula">ml/h = dosis (mg/h) ÷ concentración (mg/ml). Ejemplo: perfusión de 50 mg en 50 ml.</p><p class="formula">Herramienta orientativa. Comprueba siempre el resultado y la prescripción.</p></div>
+<h2>Antes de iniciar una perfusión</h2>
+<ul><li>Comprueba la concentración de la mezcla con la etiqueta, no con la memoria: cada unidad puede preparar el mismo fármaco a concentraciones distintas.</li>
+<li>Usa, siempre que se pueda, las bombas inteligentes con biblioteca de fármacos y límites de dosis.</li>
+<li>Etiqueta la línea con el fármaco, la concentración y la fecha, y comprueba que la vía es la indicada (central o periférica).</li>
+<li>No administres bolos por una línea con perfusión de fármacos vasoactivos.</li></ul>
+<div class="note">Los valores de ejemplo son solo para mostrar el cálculo. Las dosis y las mezclas las fija la prescripción y el protocolo de tu unidad.</div>
+
+<section class="sources" id="fuentes"><h2>Fuentes</h2><ol><li>Instituto para el Uso Seguro de los Medicamentos (ISMP-España). Lista de medicamentos de alto riesgo y recomendaciones para prevenir errores de medicación. <a href="https://www.ismp-espana.org/" rel="noopener">www.ismp-espana.org</a></li><li>Infusion Nurses Society. <i>Infusion Therapy Standards of Practice</i>, 9.ª edición. J Infus Nurs. 2024;47(1S). <a href="https://www.ins1.org/publications/infusion-therapy-standards-of-practice/" rel="noopener">www.ins1.org</a></li><li>Agencia Española de Medicamentos y Productos Sanitarios. Centro de Información online de Medicamentos (CIMA): fichas técnicas. <a href="https://cima.aemps.es/" rel="noopener">cima.aemps.es</a></li></ol></section>
+</div></article>
+<aside class="side"><div class="box"><h3>Otras escalas</h3><ul><li><a href="../../escalas/ritmo-de-goteo/">Ritmo de goteo y velocidad de perfusión</a></li><li><a href="../../escalas/glasgow/">Escala de coma de Glasgow</a></li><li><a href="../../escalas/braden/">Escala de Braden</a></li><li><a href="../../escalas/norton/">Escala de Norton modificada</a></li><li><a href="../../escalas/barthel/">Índice de Barthel</a></li><li><a href="../../escalas/dolor/">Escalas de dolor</a></li><li><a href="../../escalas/news2/">Escala NEWS2</a></li><li><a href="../../escalas/downton/">Escala de Downton</a></li><li><a href="../../escalas/calculo-de-dosis/">Cálculo de dosis y diluciones</a></li><li><a href="../../escalas/medidas-corporales-y-balance/">IMC, superficie corporal y balance hídrico</a></li><li><a href="../../escalas/morse/">Escala de Morse</a></li><li><a href="../../escalas/mna-sf/">MNA-SF</a></li><li><a href="../../escalas/pfeiffer/">Cuestionario de Pfeiffer</a></li><li><a href="../../escalas/zarit/">Escala de Zarit</a></li><li><a href="../../escalas/apgar/">Test de Apgar</a></li><li><a href="../../escalas/lawton-brody/">Escala de Lawton y Brody</a></li><li><a href="../../escalas/tinetti/">Escala de Tinetti</a></li><li><a href="../../escalas/ictus-cincinnati-y-race/">Ictus: escalas de Cincinnati y RACE</a></li></ul></div><div class="box"><h3>Importante</h3><p class="muted" style="font-size:.9rem">Esta ficha resume la evidencia y las guías vigentes. En tu centro manda el protocolo aprobado, que puede tener matices.</p></div></aside>
+</div></div>
+</main>
+<footer><div class="wrap">
+<div>
+<p class="alert"><b>Ante una urgencia, llama al 112.</b> enfermeria.si ofrece información sanitaria general y no sustituye la valoración de un profesional. Para un caso concreto, consulta con tu enfermera o tu médico, y sigue siempre los protocolos de tu centro.</p>
+<p>Cada página indica sus fuentes y la fecha de la última revisión. Las fuentes son guías de práctica clínica, normativa publicada en el BOE y documentos de organismos oficiales como el Ministerio de Sanidad, el INE y la OMS. <a href="../../fuentes-y-metodologia/">Cómo elaboramos el contenido</a>.</p>
+</div>
+<div><p><a href="../../aviso-legal/">Aviso legal</a> · <a href="../../privacidad/">Privacidad</a> · <a href="../../fuentes-y-metodologia/">Fuentes</a> · <a href="../../novedades/">Novedades</a> · <a href="../../glosario/">Glosario</a></p><p>© 2026 enfermeria.si</p></div>
+</div></footer>
+
+</body>
+</html>

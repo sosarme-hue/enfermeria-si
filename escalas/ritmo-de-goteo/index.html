@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>enfermeria.si · Ritmo de goteo y velocidad de perfusión</title>
+<meta name="description" content="Para ajustar a mano una perfusión por gravedad hay que pasar el volumen y el tiempo prescritos a gotas por minuto, teniendo en cuenta el equipo de infusión.">
+<link rel="canonical" href="https://enfermeria.si/escalas/ritmo-de-goteo/">
+<link rel="alternate" hreflang="es-ES" href="https://enfermeria.si/escalas/ritmo-de-goteo/">
+<link rel="alternate" hreflang="x-default" href="https://enfermeria.si/escalas/ritmo-de-goteo/">
+<meta property="og:title" content="Ritmo de goteo y velocidad de perfusión">
+<meta property="og:description" content="Para ajustar a mano una perfusión por gravedad hay que pasar el volumen y el tiempo prescritos a gotas por minuto, teniendo en cuenta el equipo de infusión.">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bitter:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../../assets/style.css">
+<script src="../../assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="../../"><svg width="32" height="32" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="6" fill="var(--rose)"/><path d="M24 44C13 36.5 6 30 6 21c0-5.5 4-9 9-9 4 0 7 2.5 9 6.5" fill="none" stroke="var(--scrub)" stroke-width="5" stroke-linecap="round"/><path d="M24 44c11-7.5 18-14 18-23 0-5.5-4-9-9-9-4 0-7 2.5-9 6.5" fill="none" stroke="var(--scrub)" stroke-width="5" stroke-linecap="round" opacity=".55"/></svg><span class="bt">enfermería<span>.si</span></span></a>
+<nav class="main" aria-label="Secciones"><a href="../../tecnicas/">Técnicas</a><a href="../../escalas/" aria-current="page">Escalas</a><a href="../../vacunas/">Vacunas</a><a href="../../etapas-de-la-vida/">Etapas de la vida</a><a href="../../proceso-enfermero/">Proceso enfermero</a><a href="../../eir/">EIR</a><a href="../../cuidados-en-casa/">Cuidados en casa</a><a href="../../historia/">Historia</a><a href="../../en-el-mundo/">Mundo</a><a href="../../formacion/">Formación</a></nav>
+</div></header>
+<main id="contenido">
+<div class="wrap"><nav class="crumbs" aria-label="Estás en"><a href="../../">Inicio</a> / <a href="../../escalas/">Escalas y calculadoras</a></nav>
+<div class="art"><article class="art-main">
+<header><span class="label">Calculadora</span><h1 style="margin-top:8px">Ritmo de goteo y velocidad de perfusión</h1><p class="lead">Para ajustar a mano una perfusión por gravedad hay que pasar el volumen y el tiempo prescritos a gotas por minuto, teniendo en cuenta el equipo de infusión.</p>
+<p class="revised">Revisado en noviembre de 2026 · Fuentes al final de la página</p></header>
+<div class="doc">
+<div class="tool" style="margin-block:18px 24px">
+<div class="fields">
+<label for="vol">Volumen (ml)<input id="vol" type="number" min="1" value="1000" inputmode="decimal"></label>
+<label for="hrs">Tiempo (horas)<input id="hrs" type="number" min="0.1" step="0.5" value="8" inputmode="decimal"></label>
+<label for="fac">Equipo<select id="fac"><option value="20" selected>Macrogotero · 20 gotas/ml</option><option value="60">Microgotero · 60 microgotas/ml</option><option value="15">Sangre · 15 gotas/ml</option></select></label>
+</div>
+<div class="result" aria-live="polite"><div><b id="gpm">42</b><small>gotas por minuto</small></div><div><b id="mlh">125</b><small>ml por hora</small></div></div>
+<p class="formula">gotas/min = volumen (ml) × factor de goteo (gotas/ml) ÷ tiempo (min)</p></div>
+<h2>Cómo se calcula</h2>
+<p>El factor de goteo viene impreso en el envase del sistema. Los más habituales son 20 gotas/ml en los sistemas estándar, 60 microgotas/ml en los microgoteros y 15 gotas/ml en algunos equipos de transfusión.</p>
+<div class="tscroll"><table class="t"><thead><tr><th>Ejemplo</th><th>Cálculo</th><th>Resultado</th></tr></thead><tbody>
+<tr><td>1.000 ml en 8 h con macrogotero</td><td class="n">1000 × 20 ÷ 480</td><td class="n">≈ 42 gotas/min</td></tr>
+<tr><td>500 ml en 4 h con macrogotero</td><td class="n">500 × 20 ÷ 240</td><td class="n">≈ 42 gotas/min</td></tr>
+<tr><td>100 ml en 1 h con microgotero</td><td class="n">100 × 60 ÷ 60</td><td class="n">100 microgotas/min</td></tr>
+</tbody></table></div>
+<p>Con microgotero, las microgotas por minuto coinciden con los mililitros por hora. Es un truco útil para comprobar el cálculo.</p>
+<div class="note">Los fármacos de alto riesgo (insulina, heparina, aminas, potasio concentrado) deben administrarse con bomba de infusión, no por gravedad. Haz siempre un doble chequeo según el protocolo de tu unidad.</div>
+
+<section class="sources" id="fuentes"><h2>Fuentes</h2><ol><li>Instituto para el Uso Seguro de los Medicamentos (ISMP-España). Lista de medicamentos de alto riesgo y recomendaciones de prácticas seguras. <a href="https://www.ismp-espana.org/" rel="noopener">www.ismp-espana.org</a></li><li>Infusion Nurses Society. <i>Infusion Therapy Standards of Practice</i>, 9.ª edición (2024). <a href="https://www.ins1.org/publications/infusion-therapy-standards-of-practice/" rel="noopener">www.ins1.org</a></li></ol></section>
+</div></article>
+<aside class="side"><div class="box"><h3>Otras escalas</h3><ul><li><a href="../../escalas/glasgow/">Escala de coma de Glasgow</a></li><li><a href="../../escalas/braden/">Escala de Braden</a></li><li><a href="../../escalas/norton/">Escala de Norton modificada</a></li><li><a href="../../escalas/barthel/">Índice de Barthel</a></li><li><a href="../../escalas/dolor/">Escalas de dolor</a></li><li><a href="../../escalas/news2/">Escala NEWS2</a></li><li><a href="../../escalas/downton/">Escala de Downton</a></li><li><a href="../../escalas/calculo-de-dosis/">Cálculo de dosis y diluciones</a></li><li><a href="../../escalas/perfusiones/">Perfusiones continuas</a></li><li><a href="../../escalas/medidas-corporales-y-balance/">IMC, superficie corporal y balance hídrico</a></li><li><a href="../../escalas/morse/">Escala de Morse</a></li><li><a href="../../escalas/mna-sf/">MNA-SF</a></li><li><a href="../../escalas/pfeiffer/">Cuestionario de Pfeiffer</a></li><li><a href="../../escalas/zarit/">Escala de Zarit</a></li><li><a href="../../escalas/apgar/">Test de Apgar</a></li><li><a href="../../escalas/lawton-brody/">Escala de Lawton y Brody</a></li><li><a href="../../escalas/tinetti/">Escala de Tinetti</a></li><li><a href="../../escalas/ictus-cincinnati-y-race/">Ictus: escalas de Cincinnati y RACE</a></li></ul></div><div class="box"><h3>Importante</h3><p class="muted" style="font-size:.9rem">Esta ficha resume la evidencia y las guías vigentes. En tu centro manda el protocolo aprobado, que puede tener matices.</p></div></aside>
+</div></div>
+</main>
+<footer><div class="wrap">
+<div>
+<p class="alert"><b>Ante una urgencia, llama al 112.</b> enfermeria.si ofrece información sanitaria general y no sustituye la valoración de un profesional. Para un caso concreto, consulta con tu enfermera o tu médico, y sigue siempre los protocolos de tu centro.</p>
+<p>Cada página indica sus fuentes y la fecha de la última revisión. Las fuentes son guías de práctica clínica, normativa publicada en el BOE y documentos de organismos oficiales como el Ministerio de Sanidad, el INE y la OMS. <a href="../../fuentes-y-metodologia/">Cómo elaboramos el contenido</a>.</p>
+</div>
+<div><p><a href="../../aviso-legal/">Aviso legal</a> · <a href="../../privacidad/">Privacidad</a> · <a href="../../fuentes-y-metodologia/">Fuentes</a> · <a href="../../novedades/">Novedades</a> · <a href="../../glosario/">Glosario</a></p><p>© 2026 enfermeria.si</p></div>
+</div></footer>
+
+</body>
+</html>
