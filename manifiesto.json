@@ -1,0 +1,178 @@
+{
+ "sitio": "ludicopedia.com",
+ "articulos": [
+  {
+   "clave": "historia-del-parchis",
+   "fecha": "2026-11-10",
+   "archivos": [
+    "blog/historia-del-parchis.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/historia-del-parchis.html"
+   ]
+  },
+  {
+   "clave": "juegos-de-cartas-baraja-espanola",
+   "fecha": "2026-11-10",
+   "archivos": [
+    "blog/juegos-de-cartas-baraja-espanola.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/juegos-de-cartas-baraja-espanola.html"
+   ]
+  },
+  {
+   "clave": "juegos-para-jugar-sin-nada",
+   "fecha": "2026-11-10",
+   "archivos": [
+    "blog/juegos-para-jugar-sin-nada.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/juegos-para-jugar-sin-nada.html"
+   ]
+  },
+  {
+   "clave": "errores-de-principiante-en-ajedrez",
+   "fecha": "2026-11-17",
+   "archivos": [
+    "blog/errores-de-principiante-en-ajedrez.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/errores-de-principiante-en-ajedrez.html"
+   ]
+  },
+  {
+   "clave": "juegos-de-mesa-para-regalar-por-edad",
+   "fecha": "2026-11-24",
+   "archivos": [
+    "blog/juegos-de-mesa-para-regalar-por-edad.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/juegos-de-mesa-para-regalar-por-edad.html"
+   ]
+  },
+  {
+   "clave": "historia-del-domino",
+   "fecha": "2026-12-01",
+   "archivos": [
+    "blog/historia-del-domino.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/historia-del-domino.html"
+   ]
+  },
+  {
+   "clave": "trucos-para-resolver-sudokus",
+   "fecha": "2026-12-08",
+   "archivos": [
+    "blog/trucos-para-resolver-sudokus.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/trucos-para-resolver-sudokus.html"
+   ]
+  },
+  {
+   "clave": "loteria-de-navidad-historia-y-curiosidades",
+   "fecha": "2026-12-15",
+   "archivos": [
+    "blog/loteria-de-navidad-historia-y-curiosidades.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/loteria-de-navidad-historia-y-curiosidades.html"
+   ]
+  },
+  {
+   "clave": "como-se-juega-al-mus",
+   "fecha": "2026-12-22",
+   "archivos": [
+    "blog/como-se-juega-al-mus.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/como-se-juega-al-mus.html"
+   ]
+  },
+  {
+   "clave": "entrenar-la-memoria-con-juegos",
+   "fecha": "2026-12-29",
+   "archivos": [
+    "blog/entrenar-la-memoria-con-juegos.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/entrenar-la-memoria-con-juegos.html"
+   ]
+  },
+  {
+   "clave": "juguetes-de-reyes-de-siempre",
+   "fecha": "2027-01-05",
+   "archivos": [
+    "blog/juguetes-de-reyes-de-siempre.html"
+   ],
+   "urls": [
+    "https://ludicopedia.com/blog/juguetes-de-reyes-de-siempre.html"
+   ]
+  }
+ ],
+ "indices": [
+  {
+   "fecha": "2026-11-10",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-11-17",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-11-24",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-12-01",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-12-08",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-12-15",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-12-22",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2026-12-29",
+   "archivos": [
+    "blog/index.html"
+   ]
+  },
+  {
+   "fecha": "2027-01-05",
+   "archivos": [
+    "blog/index.html"
+   ]
+  }
+ ],
+ "urls_portadas": [
+  "https://ludicopedia.com/blog/"
+ ],
+ "sitemap": {
+  "archivo": "sitemap.xml",
+  "modo": "anadir"
+ }
+}
