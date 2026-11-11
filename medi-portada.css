@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* === diseno Laboratorio (11-11-2026) === */
+:root{--fondo:#f4f7f7;--papel:#fff;--tinta:#14262b;--tenue:#5b6f73;--acento:#134b52;--acento-suave:#dff1ee;--teja:#c0533f;--linea:#d9e4e5;--verde:#1f8a7d;--petroleo:#134b52;--menta:#9fe3d8}
+@media (prefers-color-scheme:dark){:root{--fondo:#0e1a1c;--papel:#152629;--tinta:#e6efee;--tenue:#9fb4b6;--acento:#7fd1c6;--acento-suave:#1a3436;--teja:#e88f7c;--linea:#24393c;--verde:#3bb5a6}}
+html,body{overflow-x:clip}
+/* cabecera */
+.cab{border-bottom:0}
+.marca{color:var(--acento);font-family:var(--ui);font-weight:800;letter-spacing:-.02em}
+.menu{gap:4px 14px}.menu a{font-weight:600;padding:3px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--acento);border-bottom-color:var(--verde);text-decoration:none}
+.idioma a,.idioma span{border:1px solid var(--linea);background:var(--papel);color:var(--acento)}
+.idioma span{background:var(--petroleo);border-color:var(--petroleo);color:#fff}
+.busca-mini input{border-radius:12px}
+/* cabecera de los listados: franja azul petróleo a todo el ancho */
+main>.hero{margin:0 calc(50% - 50vw) 10px;padding:46px max(18px,calc(50vw - 572px)) 40px;background:linear-gradient(110deg,#0a2a2f,#134b52 60%,#1d6b72);color:#fff}
+main>.hero h1{color:#fff;font:800 clamp(2rem,4.6vw,3.2rem)/1.05 var(--ui);letter-spacing:-.035em}
+main>.hero .entradilla{color:rgba(255,255,255,.85)}
+main>.hero .entradilla a,main>.hero a{color:var(--menta)}
+main>.hero .nota{color:rgba(255,255,255,.7)}
+/* títulos de sección */
+:where(main) h2{font-family:var(--ui);letter-spacing:-.02em}
+main>section>h2,.titulo-bloque h2{font:800 clamp(1.4rem,2.3vw,1.9rem)/1.15 var(--ui);letter-spacing:-.025em}
+main>section:not(.hero)>h2::before,.titulo-bloque h2::before{content:"";display:block;width:40px;height:4px;border-radius:4px;background:var(--verde);margin-bottom:12px}
+main>section{border-top:0}
+main>section>h2 a{color:var(--tinta)}
+.titulo-bloque a{background:var(--acento-suave);color:var(--acento);padding:6px 14px;border-radius:999px}
+.titulo-bloque a:hover{text-decoration:none;background:var(--verde);color:#fff}
+.nota{font-family:var(--ui)}
+/* rejillas: tarjetas blancas redondeadas */
+.persona{background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:8px 8px 12px}
+.persona img,.persona .vacio{border:0;border-radius:10px}
+.persona:hover{box-shadow:0 14px 26px -18px rgba(19,75,82,.5)}
+.tarjeta{border-radius:16px;border-color:var(--linea)}
+.tarjeta b{font-family:var(--ui);font-weight:700;letter-spacing:-.01em}
+.tarjeta:hover{transform:translateY(-2px);box-shadow:0 16px 30px -18px rgba(19,75,82,.45)}
+.sec{border-radius:16px}
+.chip{border-color:var(--linea);background:var(--acento-suave);color:var(--acento);font-weight:600}
+.chip:hover{background:var(--verde);color:#fff;text-decoration:none}
+.epocas a{border-radius:14px;font-family:var(--ui)}
+.epocas b{font-family:var(--ui)}
+.efe{border-radius:14px}
+.efe strong,.mini b{font-family:var(--ui)}
+/* fichas */
+.ficha>header{background:var(--papel);border:1px solid var(--linea);border-radius:20px;padding:22px;box-shadow:0 20px 40px -32px rgba(19,75,82,.5)}
+.ficha h1{font:800 clamp(1.9rem,4vw,2.8rem)/1.08 var(--ui);letter-spacing:-.035em}
+.ficha .sub{color:var(--tenue)}
+.retrato img{border:0;border-radius:14px}
+.miga a{color:var(--verde)}
+.texto h2,.ficha h2{color:var(--verde);letter-spacing:.1em}
+.entorno{border-radius:16px;border-left:5px solid var(--verde)}
+.recuadro{background:var(--papel);border:1px solid var(--linea);border-radius:16px;padding:4px 22px 10px;margin:22px 0}
+.recuadro li strong{color:var(--acento)}
+.curio{border-left-color:var(--teja)}
+.curio h3{font-family:var(--ui);font-weight:700}
+.curio-rejilla .curio{border-radius:14px}
+.fuentes{border-color:var(--linea);background:var(--papel);border-radius:16px}
+.aviso{border-radius:14px}
+.filtros input,.filtros select{border-radius:12px}
+.boton-mas{border-color:var(--verde);color:var(--verde)}
+.boton-mas:hover{background:var(--verde);color:#fff}
+.lista a{font-weight:600}
+@media (max-width:900px){.menu a{border-bottom:1px solid var(--linea);border-radius:999px}main>.hero{padding-top:30px;padding-bottom:28px}}
+@media (max-width:600px){.ficha>header{padding:16px;border-radius:16px}}
+/* === fin diseno Laboratorio === */
+
+/* Incluye el bloque de variables del diseno Laboratorio para que la portada se vea bien aunque el navegador tenga estilo.css antiguo en cache */
+/* Medicapedia - diseño C "Laboratorio", portada (ES, EN y CA). Usa las variables del bloque "diseno Laboratorio" de estilo.css. Moderna y luminosa: portada a todo el ancho con el Pasteur de Edelfelt bajo un velo azul petróleo, tarjetas blancas redondeadas, letra de palo seco en los títulos y detalles en verde quirófano. */
+:root{--l-fondo:var(--fondo);--l-blanco:var(--papel);--l-tinta:var(--tinta);--l-azul:var(--petroleo);--l-verde:var(--verde);--l-claro:var(--acento-suave);--l-teja:var(--teja);--l-suave:var(--tenue);--l-linea:var(--linea)}
+html,body{overflow-x:clip}
+body{background:var(--l-fondo);color:var(--l-tinta)}
+/* portada a todo el ancho con foto */
+.portada{position:relative;isolation:isolate;margin:0 calc(50% - 50vw);padding:70px max(18px,calc(50vw - 572px)) 64px;gap:48px;color:#fff;grid-template-columns:1.2fr .8fr}
+.portada::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,42,47,.96) 0%,rgba(13,61,68,.86) 45%,rgba(13,61,68,.3) 100%),url(/img/diseno/pasteur.jpg) right 30%/cover no-repeat #0d3d44}
+.portada::after{content:"Albert Edelfelt, Louis Pasteur (1885) · dominio público";position:absolute;right:max(18px,calc(50vw - 572px));bottom:12px;font:500 .72rem var(--ui);color:rgba(255,255,255,.7)}
+html[lang=en] .portada::after{content:"Albert Edelfelt, Louis Pasteur (1885) · public domain"}
+html[lang=ca] .portada::after{content:"Albert Edelfelt, Louis Pasteur (1885) · domini públic"}
+.portada h1{color:#fff;font:800 clamp(2.6rem,6.6vw,5rem)/1 var(--ui);letter-spacing:-.04em;margin:0 0 10px}
+.lema{color:#9fe3d8;font:600 clamp(1.1rem,1.8vw,1.4rem)/1.35 var(--ui);font-style:normal}
+.entradilla{color:rgba(255,255,255,.85)}
+.busca-grande{border:0;border-radius:14px;background:#fff;box-shadow:0 18px 40px -18px rgba(0,0,0,.6);max-width:560px}
+.busca-grande input{padding:16px 20px}
+.busca-grande button{background:var(--l-verde);color:#fff;border-radius:0 14px 14px 0;padding:0 26px}
+.cifras{color:rgba(255,255,255,.75)}
+.cifras span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:8px 14px}
+.cifras b{color:#fff;font-family:var(--ui);font-weight:800}
+.deldia{background:var(--papel);color:var(--l-tinta);border:0;border-radius:18px;box-shadow:0 24px 60px -24px rgba(0,0,0,.7);grid-template-columns:120px 1fr;padding:22px}
+.deldia .marco{padding:0;background:none;box-shadow:none;border-radius:12px;overflow:hidden}
+.deldia .marco img{filter:none}
+.deldia h2{font-family:var(--ui);font-weight:800;letter-spacing:-.02em}
+.deldia h2 a{color:var(--l-tinta)}
+.et{color:var(--l-verde);font-family:var(--ui)}
+/* secciones */
+main>section{border-top:0;padding:46px 0 10px}
+main>section>h2,.titulo-bloque h2{font:800 clamp(1.6rem,2.6vw,2.1rem)/1.15 var(--ui);letter-spacing:-.025em;color:var(--l-tinta)}
+main>section>h2::before,.titulo-bloque h2::before{content:"";display:block;width:40px;height:4px;border-radius:4px;background:var(--l-verde);margin-bottom:12px}
+.titulo-bloque a{background:var(--l-claro);color:var(--acento);padding:6px 14px;border-radius:999px}
+.titulo-bloque a:hover{text-decoration:none;background:var(--l-verde);color:#fff}
+.pie-h{color:var(--l-suave);font-family:var(--ui)}
+.secciones{grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.sec,.sec:nth-child(3n+2){background:var(--l-blanco);border:1px solid var(--l-linea);border-radius:16px;padding:22px;border-top:1px solid var(--l-linea);position:relative;transition:transform .15s,box-shadow .15s}
+.sec::before{content:"";display:block;width:36px;height:5px;border-radius:5px;background:var(--l-verde);margin-bottom:14px}
+.sec:nth-child(3n+2)::before{background:var(--l-teja)}
+.sec:nth-child(3n)::before{background:#3c6fa8}
+.sec:hover{transform:translateY(-3px);box-shadow:0 16px 30px -18px rgba(19,75,82,.45)}
+.sec b{font:700 1.15rem var(--ui);letter-spacing:-.01em}
+.sec span{color:var(--l-verde);font-family:var(--ui)}
+.curio-dia{background:var(--l-azul);color:#fff;border-radius:18px}
+.curio-dia .num{color:#9fe3d8}.curio-dia .et{color:#9fe3d8}.curio-dia a{color:#fff;text-decoration:underline}
+/* retratos redondeados */
+.personas{grid-template-columns:repeat(8,1fr);gap:22px 16px}
+.persona{background:var(--l-blanco);border:1px solid var(--l-linea);border-radius:14px;padding:8px 8px 12px}
+.persona img{border:0;border-radius:10px}
+.persona:hover{box-shadow:0 14px 26px -18px rgba(19,75,82,.5)}
+/* épocas con Florence Nightingale */
+#epocas{display:grid;grid-template-columns:1fr 300px;column-gap:30px}
+#epocas>h2,#epocas>.pie-h{grid-column:1/-1}
+#epocas::after{content:"Henrietta Rae, Florence Nightingale en Scutari (1891) · dominio público";grid-column:2;grid-row:3;display:flex;align-items:flex-end;padding:12px 14px;border-radius:18px;background:linear-gradient(rgba(0,0,0,0) 55%,rgba(0,0,0,.75)),url(/img/diseno/nightingale.jpg) center 20%/cover no-repeat;color:#fff;font:500 .74rem var(--ui);min-height:260px}
+html[lang=en] #epocas::after{content:"Henrietta Rae, Florence Nightingale at Scutari (1891) · public domain"}
+html[lang=ca] #epocas::after{content:"Henrietta Rae, Florence Nightingale a Scutari (1891) · domini públic"}
+.epocas{grid-template-columns:repeat(2,1fr);gap:12px}
+.epocas a,.epocas a:nth-child(even){border-radius:14px;padding:16px 18px 22px;background:linear-gradient(135deg,var(--l-azul),#1d6b72);font-family:var(--ui)}
+.epocas a:nth-child(4n+2),.epocas a:nth-child(4n+3){background:linear-gradient(135deg,#1d6b72,var(--l-verde))}
+.epocas b{font:700 1.08rem var(--ui)}
+.epocas i{background:#9fe3d8;height:4px;border-radius:0 4px 4px 0}
+.cuatro{gap:16px}
+.cuatro>div{background:var(--l-blanco);border:1px solid var(--l-linea);border-radius:16px;padding:18px 18px 8px}
+.cuatro h3{color:var(--l-verde)}
+.mini b{font-family:var(--ui);font-size:.98rem}
+.mini:last-child{border-bottom:0}
+.efe{border-radius:14px;border-color:var(--l-linea);background:var(--l-blanco)}
+.efe img{border-radius:8px}
+.efe .anyo{color:var(--l-verde)}
+.efe strong{font-family:var(--ui)}
+#quiz-diario>a{background:linear-gradient(120deg,var(--l-azul),var(--l-verde))!important;color:#fff!important;border:0!important;border-radius:18px!important;padding:26px 28px!important}
+#quiz-diario>a>span:first-child{color:#9fe3d8!important;font:800 2.6rem var(--ui)!important}
+#quiz-diario>a>span:last-child{background:#fff!important;color:var(--l-azul)!important}
+.pie{border-top:1px solid var(--l-linea)}
+@media (max-width:900px){.portada{grid-template-columns:1fr;padding-top:40px;padding-bottom:44px}.portada::after{bottom:8px}.personas{grid-template-columns:repeat(4,1fr)}#epocas{grid-template-columns:1fr}#epocas::after{grid-column:1;grid-row:auto;margin-top:14px;min-height:220px}}
+@media (max-width:600px){.personas{grid-template-columns:repeat(3,1fr)}.deldia{grid-template-columns:90px 1fr}.cifras span{padding:6px 10px}.portada h1{font-size:clamp(2.4rem,12vw,3rem)}}

@@ -1,0 +1,64 @@
+
+/* === diseno Laboratorio (11-11-2026) === */
+:root{--fondo:#f4f7f7;--papel:#fff;--tinta:#14262b;--tenue:#5b6f73;--acento:#134b52;--acento-suave:#dff1ee;--teja:#c0533f;--linea:#d9e4e5;--verde:#1f8a7d;--petroleo:#134b52;--menta:#9fe3d8}
+@media (prefers-color-scheme:dark){:root{--fondo:#0e1a1c;--papel:#152629;--tinta:#e6efee;--tenue:#9fb4b6;--acento:#7fd1c6;--acento-suave:#1a3436;--teja:#e88f7c;--linea:#24393c;--verde:#3bb5a6}}
+html,body{overflow-x:clip}
+/* cabecera */
+.cab{border-bottom:0}
+.marca{color:var(--acento);font-family:var(--ui);font-weight:800;letter-spacing:-.02em}
+.menu{gap:4px 14px}.menu a{font-weight:600;padding:3px 0;border-bottom:2px solid transparent}
+.menu a:hover{color:var(--acento);border-bottom-color:var(--verde);text-decoration:none}
+.idioma a,.idioma span{border:1px solid var(--linea);background:var(--papel);color:var(--acento)}
+.idioma span{background:var(--petroleo);border-color:var(--petroleo);color:#fff}
+.busca-mini input{border-radius:12px}
+/* cabecera de los listados: franja azul petróleo a todo el ancho */
+main>.hero{margin:0 calc(50% - 50vw) 10px;padding:46px max(18px,calc(50vw - 572px)) 40px;background:linear-gradient(110deg,#0a2a2f,#134b52 60%,#1d6b72);color:#fff}
+main>.hero h1{color:#fff;font:800 clamp(2rem,4.6vw,3.2rem)/1.05 var(--ui);letter-spacing:-.035em}
+main>.hero .entradilla{color:rgba(255,255,255,.85)}
+main>.hero .entradilla a,main>.hero a{color:var(--menta)}
+main>.hero .nota{color:rgba(255,255,255,.7)}
+/* títulos de sección */
+:where(main) h2{font-family:var(--ui);letter-spacing:-.02em}
+main>section>h2,.titulo-bloque h2{font:800 clamp(1.4rem,2.3vw,1.9rem)/1.15 var(--ui);letter-spacing:-.025em}
+main>section:not(.hero)>h2::before,.titulo-bloque h2::before{content:"";display:block;width:40px;height:4px;border-radius:4px;background:var(--verde);margin-bottom:12px}
+main>section{border-top:0}
+main>section>h2 a{color:var(--tinta)}
+.titulo-bloque a{background:var(--acento-suave);color:var(--acento);padding:6px 14px;border-radius:999px}
+.titulo-bloque a:hover{text-decoration:none;background:var(--verde);color:#fff}
+.nota{font-family:var(--ui)}
+/* rejillas: tarjetas blancas redondeadas */
+.persona{background:var(--papel);border:1px solid var(--linea);border-radius:14px;padding:8px 8px 12px}
+.persona img,.persona .vacio{border:0;border-radius:10px}
+.persona:hover{box-shadow:0 14px 26px -18px rgba(19,75,82,.5)}
+.tarjeta{border-radius:16px;border-color:var(--linea)}
+.tarjeta b{font-family:var(--ui);font-weight:700;letter-spacing:-.01em}
+.tarjeta:hover{transform:translateY(-2px);box-shadow:0 16px 30px -18px rgba(19,75,82,.45)}
+.sec{border-radius:16px}
+.chip{border-color:var(--linea);background:var(--acento-suave);color:var(--acento);font-weight:600}
+.chip:hover{background:var(--verde);color:#fff;text-decoration:none}
+.epocas a{border-radius:14px;font-family:var(--ui)}
+.epocas b{font-family:var(--ui)}
+.efe{border-radius:14px}
+.efe strong,.mini b{font-family:var(--ui)}
+/* fichas */
+.ficha>header{background:var(--papel);border:1px solid var(--linea);border-radius:20px;padding:22px;box-shadow:0 20px 40px -32px rgba(19,75,82,.5)}
+.ficha h1{font:800 clamp(1.9rem,4vw,2.8rem)/1.08 var(--ui);letter-spacing:-.035em}
+.ficha .sub{color:var(--tenue)}
+.retrato img{border:0;border-radius:14px}
+.miga a{color:var(--verde)}
+.texto h2,.ficha h2{color:var(--verde);letter-spacing:.1em}
+.entorno{border-radius:16px;border-left:5px solid var(--verde)}
+.recuadro{background:var(--papel);border:1px solid var(--linea);border-radius:16px;padding:4px 22px 10px;margin:22px 0}
+.recuadro li strong{color:var(--acento)}
+.curio{border-left-color:var(--teja)}
+.curio h3{font-family:var(--ui);font-weight:700}
+.curio-rejilla .curio{border-radius:14px}
+.fuentes{border-color:var(--linea);background:var(--papel);border-radius:16px}
+.aviso{border-radius:14px}
+.filtros input,.filtros select{border-radius:12px}
+.boton-mas{border-color:var(--verde);color:var(--verde)}
+.boton-mas:hover{background:var(--verde);color:#fff}
+.lista a{font-weight:600}
+@media (max-width:900px){.menu a{border-bottom:1px solid var(--linea);border-radius:999px}main>.hero{padding-top:30px;padding-bottom:28px}}
+@media (max-width:600px){.ficha>header{padding:16px;border-radius:16px}}
+/* === fin diseno Laboratorio === */
