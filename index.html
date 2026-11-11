@@ -14,8 +14,8 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bitter:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=1794261862">
-<script src="assets/app.js?v=1794261862" defer></script>
+<link rel="stylesheet" href="assets/style.css?v=1794393862">
+<script src="assets/app.js?v=1794393862" defer></script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
@@ -38,7 +38,7 @@ try{if(localStorage.getItem('cookies')==='si')loadGA();}catch(e){}
 <span class="label">Enfermería explicada con claridad, con fuentes y fecha de revisión</span>
 <h1>Cuidar bien empieza por <em>entender</em>.</h1>
 <p class="lead">Técnicas paso a paso, escalas y calculadoras, preparación del EIR y guías de cuidados en casa para pacientes y familias. Todo basado en guías clínicas vigentes y en datos oficiales.</p>
-<form class="search" role="search" data-src="assets/buscar.json?v=1794261862" data-root="" data-ix="">
+<form class="search" role="search" data-src="assets/buscar.json?v=1794393862" data-root="" data-ix="">
 <label class="vh" for="q">Buscar en enfermeria.si</label>
 <div class="sbar"><input id="q" type="search" autocomplete="off" placeholder="Busca una técnica, una escala o un cuidado"><button type="submit">Buscar</button></div>
 <div class="chips" role="radiogroup" aria-label="Filtrar por público">
@@ -75,14 +75,7 @@ try{if(localStorage.getItem('cookies')==='si')loadGA();}catch(e){}
 <section class="block"><div class="wrap">
 <div class="head"><div><span class="label">Herramientas</span><h2>Escalas y calculadoras</h2><p>Funcionan en tu navegador y no guardan ningún dato. Cada una explica cómo se interpreta.</p></div><a class="btn ghost" href="escalas/">Ver todas</a></div>
 <div class="tools">
-<div class="tool"><h3>Ritmo de goteo</h3>
-<div class="fields">
-<label for="vol">Volumen (ml)<input id="vol" type="number" min="1" value="1000" inputmode="decimal"></label>
-<label for="hrs">Tiempo (horas)<input id="hrs" type="number" min="0.1" step="0.5" value="8" inputmode="decimal"></label>
-<label for="fac">Equipo<select id="fac"><option value="20" selected>20 gotas/ml</option><option value="60">60 microgotas/ml</option><option value="15">15 gotas/ml</option></select></label>
-</div>
-<div class="result" aria-live="polite"><div><b id="gpm">42</b><small>gotas por minuto</small></div><div><b id="mlh">125</b><small>ml por hora</small></div></div>
-<p class="formula">gotas/min = volumen × factor ÷ minutos</p></div>
+<div class="tool"><h3>Escala de coma de Glasgow</h3><form class="scale" data-out="gcs" data-bands='[[8, "Grave (3–8)", "pulse"], [12, "Moderado (9–12)", "warn"], [15, "Leve (13–15)", "scrub"]]'><label for="gcs-o">Apertura ocular<select id="gcs-o"><option value="4" selected>4 · Espontánea</option><option value="3">3 · Al sonido</option><option value="2">2 · A la presión</option><option value="1">1 · Ninguna</option></select></label><label for="gcs-v">Respuesta verbal<select id="gcs-v"><option value="5" selected>5 · Orientada</option><option value="4">4 · Confusa</option><option value="3">3 · Palabras</option><option value="2">2 · Sonidos</option><option value="1">1 · Ninguna</option></select></label><label for="gcs-m">Respuesta motora<select id="gcs-m"><option value="6" selected>6 · Obedece órdenes</option><option value="5">5 · Localiza</option><option value="4">4 · Flexión normal</option><option value="3">3 · Flexión anormal</option><option value="2">2 · Extensión</option><option value="1">1 · Ninguna</option></select></label></form><div class="result" aria-live="polite"><div><b id="gcs">0</b><small>puntos sobre 15</small></div><span class="sev" id="gcs-sev"></span></div><p class="formula">Suma la mejor respuesta de cada apartado. <a href="escalas/glasgow/">Cómo se aplica e interpreta</a></p></div>
 <div class="tool"><h3>Valores de referencia en el adulto</h3>
 <div class="tscroll"><table class="t" style="margin:0"><tbody>
 <tr><td>Frecuencia cardiaca en reposo</td><td class="n">60–100 lpm</td></tr>
