@@ -61,6 +61,8 @@ if ($sm['modo'] === 'propio') {
 } elseif (file_exists($t)) {
   // se añaden las URL que falten al mapa del sitio de la web
   $c = file_get_contents($t); $add = '';
+  // si la web ya usa un índice de sitemaps generado aparte (sitemap-auto-N.xml), ese generador recoge las páginas del blog
+  if (strpos($c, '<sitemapindex') !== false) $publicadas = [];
   foreach ($publicadas as [$u, $d]) if (strpos($c, "<loc>$u</loc>") === false && strpos($add, "<loc>$u</loc>") === false) $add .= "<url><loc>$u</loc><lastmod>$d</lastmod></url>";
   if ($add !== '') {
     $p = strrpos($c, '</urlset>');
