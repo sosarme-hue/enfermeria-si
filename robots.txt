@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://enfermeria.si/sitemap.xml
+Sitemap: https://enfermeria.si/sitemap-blog.xml
