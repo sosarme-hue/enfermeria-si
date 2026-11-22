@@ -10,11 +10,14 @@ $aqui = __DIR__; $pub = dirname($aqui); $web = 'https://ludicopedia.com/';
 if (!is_dir("$pub/enciclopedia") || !is_dir("$pub/en")) exit("No parece la raíz de Ludicopedia con /en/: $pub\n");
 $mapa = json_decode(file_get_contents("$aqui/mapa.json"), true);
 function copia($pub, $aqui, $rel) { $d = "$aqui/copias/$rel"; if (!file_exists($d)) { @mkdir(dirname($d), 0755, true); copy("$pub/$rel", $d); } }
-$hechas = 0; $faltan = 0; $sinCanon = [];
+$hechas = 0; $ver = 0; $faltan = 0; $sinCanon = [];
 foreach ($mapa as $es => $en) {
   $f = "$pub/$es";
   if (!is_file($f) || !is_file("$pub/en/" . ($en === '' ? 'index.html' : $en))) { $faltan++; continue; }
   $c = file_get_contents($f);
+  // versión nueva de comun.js en la URL para que los navegadores no usen la copia guardada sin el botón
+  $cv = preg_replace('~(js/comun\.js)(\?v=[^"]*)?"~', '$1?v=en20261122"', $c);
+  if ($cv !== $c) { copia($pub, $aqui, $es); file_put_contents($f, $cv, LOCK_EX); $c = $cv; $ver++; }
   if (strpos($c, 'hreflang="en"') !== false) continue;
   $uEs = $web . ($es === 'index.html' ? '' : $es); $uEn = $web . 'en/' . $en;
   $alt = "\n<link rel=\"alternate\" hreflang=\"es\" href=\"$uEs\"><link rel=\"alternate\" hreflang=\"en\" href=\"$uEn\"><link rel=\"alternate\" hreflang=\"x-default\" href=\"$uEs\">";
@@ -23,7 +26,7 @@ foreach ($mapa as $es => $en) {
   copia($pub, $aqui, $es);
   if (file_put_contents($f, $c2, LOCK_EX) !== false) $hechas++;
 }
-$r = "hreflang añadido a $hechas páginas";
+$r = "hreflang añadido a $hechas páginas, versión de comun.js cambiada en $ver";
 if ($faltan) $r .= ", $faltan sin archivo";
 if ($sinCanon) $r .= ", sin canonical: " . implode(' ', $sinCanon);
 $js = "$pub/js/comun.js"; $marca = '/* enlace a la versión inglesa (2026-11-22) */';
