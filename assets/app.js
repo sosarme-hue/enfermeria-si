@@ -168,4 +168,10 @@
     var qs = (location.search.match(/[?&]q=([^&]*)/)||[])[1];
     if (qs) { inp.value = decodeURIComponent(qs.replace(/\+/g,' ')); load(); }
   }
+
+  // Menú agrupado: un solo desplegable abierto y cierre al pulsar fuera o Escape
+  var dds=[].slice.call(document.querySelectorAll('nav.main details.dd'));
+  dds.forEach(function(d){ d.addEventListener('toggle',function(){ if(d.open) dds.forEach(function(o){ if(o!==d) o.open=false; }); }); });
+  document.addEventListener('click',function(e){ dds.forEach(function(d){ if(d.open && !d.contains(e.target)) d.open=false; }); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') dds.forEach(function(d){ if(d.open){ d.open=false; d.querySelector('summary').focus(); } }); });
 })();
